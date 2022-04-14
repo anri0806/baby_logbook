@@ -10,13 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_12_202058) do
+ActiveRecord::Schema.define(version: 2022_04_13_202908) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.date "date"
+    t.time "time"
+    t.string "doctor_name"
+    t.string "notes"
+    t.integer "baby_id"
+  end
 
   create_table "babies", force: :cascade do |t|
     t.string "name"
     t.string "sex"
     t.string "baby_image_url"
     t.date "birthday"
+  end
+
+  create_table "immunizations", force: :cascade do |t|
+    t.string "vaccine"
+    t.date "date"
+    t.integer "baby_id"
   end
 
   create_table "milestones", force: :cascade do |t|

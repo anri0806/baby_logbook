@@ -9,7 +9,8 @@ class BabiesController < ApplicationController
 
   get "/babies/:id" do
     baby = Baby.find(params[:id])
-    baby.to_json(include: :milestones)
+    baby.to_json(include: [:milestones, :appointments, :immunizations])
+
   end
 
   post "/babies" do

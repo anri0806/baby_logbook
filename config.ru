@@ -14,4 +14,7 @@ use Rack::JSONBodyParser
 # Our application
 use BabiesController
 use MilestonesController
+use ImmunizationsController
+use AppointmentsController
+
 run ApplicationController

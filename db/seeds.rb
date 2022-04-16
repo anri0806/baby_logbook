@@ -1,7 +1,7 @@
 puts "🌱 Seeding..."
 # Seed your database here
 
-b1 = Baby.create(name: "Emma", sex: "Girl", baby_image_url: "https://images.unsplash.com/photo-1546015720-b8b30df5aa27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80", birthday: "2022-2-14")
+b1 = Baby.create(name: "Emma", sex: "Girl", baby_image_url: "https://media.istockphoto.com/photos/baby-girl-in-studio-shot-picture-id675896464?k=20&m=675896464&s=612x612&w=0&h=R3MOppjfZNAEHXVDrUJEjkF2vZZqj0Rg4iv5wbq26X0=", birthday: "2022-2-14")
 
 Milestone.create(development: "Fisrt smile!", baby_id: b1.id )
 Appointment.create(date: "2022-3-14", time: "12:00", doctor_name: "Dr. Acosta", notes: "1 month checkup", baby_id: b1.id )

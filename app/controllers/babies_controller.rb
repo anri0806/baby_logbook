@@ -4,7 +4,7 @@ class BabiesController < ApplicationController
  
   get "/babies" do
     babies = Baby.all
-    babies.to_json(include: [:milestones, :appointments, :immunizations]
+    babies.to_json(include: [:milestones, :appointments, :immunizations])
   end
 
   get "/babies/:id" do

@@ -3,7 +3,7 @@ class CreateMilestones < ActiveRecord::Migration[6.1]
     create_table :milestones do |t|
       t.string :development
       t.string :notes
-      t.timestamps
+      t.date :date
       t.integer :baby_id
     end
   end

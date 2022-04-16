@@ -36,8 +36,7 @@ ActiveRecord::Schema.define(version: 2022_04_13_202908) do
   create_table "milestones", force: :cascade do |t|
     t.string "development"
     t.string "notes"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.date "date"
     t.integer "baby_id"
   end
 

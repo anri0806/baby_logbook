@@ -1,8 +1,13 @@
 class ImmunizationsController < ApplicationController
 
+    get "/immunizations" do
+      immunizations = Immunization.all
+      immunizations.to_json
+    end
   
-    post "/immunizations" do
-      immunization = Immunization.create(vaccine: params[:vaccine], date: params[:date], baby_id: params[:baby_id])
+    post "/babies/:baby_id/immunizations" do
+      baby = Baby.find_by(id: params[:baby_id])
+      immunization = baby.immunizations.create(vaccine: params[:vaccine], date: params[:date])
   
       immunization.to_json
     end

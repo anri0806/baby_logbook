@@ -1,8 +1,15 @@
 class AppointmentsController < ApplicationController
 
+    
+    get "/appointments" do
+      appointments = Appointment.all
+      appointments.to_json
+    end
 
-    post "/appointments" do
-      appointment = Appointment.create(date: params[:date], time: params[:time], doctor_name: params[:doctor_name], notes: params[:notes], baby_id: params[:baby_id])
+
+    post "/babies/:baby_id/appointments" do
+      baby = Baby.find_by(id: params[:baby_id])
+      appointment = baby.appointments.create(date: params[:date], time: params[:time], doctor_name: params[:doctor_name], notes: params[:notes])
   
       appointment.to_json
     end

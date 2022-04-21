@@ -19,6 +19,6 @@ I am a mother of 1 year old daughter and I have been using baby tracker app to t
 
 ## Installation
 1. Fork and clone this repository 
-2. Run npm install in your terminal
-3. Fork and clone [backend repository](https://github.com/anri0806/baby_logbook_backend)
-4. Run bundle exec rake server
+2. Run bundle exec rake server
+3. Fork and clone [frontend repository](https://github.com/anri0806/baby_logbook_frontend)
+4. Run npm install in your terminal

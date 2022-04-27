@@ -14,12 +14,6 @@ class AppointmentsController < ApplicationController
       appointment.to_json
     end
   
-    patch "/appointments/:id" do
-      appointment = Appointment.find(params[:id])
-      appointment.update(date: params[:date], time: params[:time], doctor_name: params[:doctor_name], notes: params[:notes])
-  
-      appointment.to_json
-    end
   
     delete "/appointments/:id" do
       appointment = Appointment.find(params[:id])

@@ -12,12 +12,6 @@ class ImmunizationsController < ApplicationController
       immunization.to_json
     end
   
-    patch "/immunizations/:id" do
-      immunization = Immunization.find(params[:id])
-      immunization.update(vaccine: params[:vaccine], date: params[:date])
-  
-      immunization.to_json
-    end
   
     delete "/immunizations/:id" do
       immunization = Immunization.find(params[:id])

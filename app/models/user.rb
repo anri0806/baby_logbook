@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-    has_many :babies
     has_secure_password
+    has_many :babies
 
-    validates :username, precense: true
+    validates :username, :password_digest, presence: true
 end 

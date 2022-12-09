@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     enable :sessions
 
     # Sign up
-    #1. ADD validation in models
+    #1. Frontend
 
     # Log in & log out
     #1. Create sessions controller

@@ -1,8 +1,6 @@
 class SessionsController < ApplicationController
     enable :sessions
 
-    # Sign up, login, logout
-    #1. Frontend
 
     post "/login" do
         user = User.find_by(username: params[:username])

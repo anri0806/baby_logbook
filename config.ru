@@ -16,5 +16,7 @@ use BabiesController
 use MilestonesController
 use ImmunizationsController
 use AppointmentsController
+use UsersController
+use SessionsController
 
 run ApplicationController

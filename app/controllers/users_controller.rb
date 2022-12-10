@@ -6,7 +6,7 @@ class UsersController < ApplicationController
         users.to_json
     end
 
-    show "/me" do
+    get "/me" do
         user = User.find_by(id: session[:user_id])
         if user
             user.to_json

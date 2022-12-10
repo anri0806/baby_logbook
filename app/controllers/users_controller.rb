@@ -6,6 +6,15 @@ class UsersController < ApplicationController
         users.to_json
     end
 
+    show "/me" do
+        user = User.find_by(id: session[:user_id])
+        if user
+            user.to_json
+        else
+            {error: "User not found" }.to_json
+        end
+    end
+
     post "/signup" do
         user = User.create(username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation])
 

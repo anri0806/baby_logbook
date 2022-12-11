@@ -12,6 +12,8 @@ end
 use Rack::JSONBodyParser
 
 # Our application
+run ApplicationController
+
 use BabiesController
 use MilestonesController
 use ImmunizationsController
@@ -19,4 +21,3 @@ use AppointmentsController
 use UsersController
 use SessionsController
 
-run ApplicationController

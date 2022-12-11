@@ -27,8 +27,16 @@ class UsersController < ApplicationController
     post "/signup" do
         user = User.create(username: params[:username], password: params[:password], password_confirmation: params[:password_confirmation])
 
-        session[:user_id] = user.id
-        user.to_json
+        if user.valid?
+            session[:user_id] = user.id
+            status 200
+            user.to_json
+          else
+            status 404
+            {errors: user.errors.full_messages }.to_json
+        end
+
+
     end
 
    

@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
             status 200
             user.to_json
         else
+            status 404
             {error: "Incorrect username or password" }.to_json
         end
     end

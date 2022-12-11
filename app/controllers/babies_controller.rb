@@ -7,14 +7,6 @@ class BabiesController < ApplicationController
     babies.to_json(include: [:milestones, :appointments, :immunizations])
   end
 
-  # // SET user associated baby
-  # // BACKEND
-  # // 1. create new routes - get "/user_baby_records/:id" in Baby controller
-  # //    render baby <= user_id = (params[:id])
-
-  # // 2. Add user_id upon adding baby
-
-
   get "/current_user_records/:id" do
     current_user_records = Baby.find_by(user_id: params[:id])
 
@@ -29,7 +21,7 @@ class BabiesController < ApplicationController
   end
 
   post "/babies" do
-    baby = Baby.create(name: params[:name], sex: params[:sex], baby_image_url: params[:baby_image_url], birthday: params[:birthday])
+    baby = Baby.create(name: params[:name], sex: params[:sex], baby_image_url: params[:baby_image_url], birthday: params[:birthday], user_id: params[:user_id])
 
     baby.to_json
   end

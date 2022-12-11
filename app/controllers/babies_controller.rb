@@ -8,8 +8,8 @@ class BabiesController < ApplicationController
   end
 
   get "/current_user_records/:id" do
-    current_user_records = Baby.find_by(user_id: params[:id])
-
+    current_user_records = Baby.where(user_id: params[:id])
+    
     current_user_records.to_json(include: [:milestones, :appointments, :immunizations])
   end
 
